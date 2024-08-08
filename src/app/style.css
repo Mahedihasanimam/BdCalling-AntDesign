@@ -1,0 +1,13 @@
+/* styles.css */
+.custom-menu .ant-menu-item {
+    color: #ffffff; 
+  }
+  
+  .custom-menu .ant-menu-item:hover {
+    color: #ffff;
+  }
+  
+  .custom-menu .ant-menu-item-selected {
+    color: #3b82f6;
+  }
+  
