@@ -1,13 +1,14 @@
 "use client";
 
 import { MenuOutlined } from "@ant-design/icons";
-import { Drawer, Menu } from "antd";
+import { Button, Drawer, Menu } from "antd";
 import React, { useState } from "react";
 import '../app/style.css';
+import Link from "next/link";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div className="absolute w-full z-50">
+    <div className="absolute w-full z-50 bg-[#1F2937]">
         <div className="container mx-auto   text-white">
       <div className="flex items-center justify-between px-2 ">
         <MenuOutlined 
@@ -37,24 +38,28 @@ const Navbar = () => {
 const AppMenu = ({ isinline = false }) => {
   return (
     <Menu
-    className="border-none text-lg p-4 bg-transparent custom-menu "
+    className="border-none text-lg p-4 bg-[#1F2937] custom-menu "
       mode={isinline ? "inline" : "horizontal"}
       items={[
         {
-          label: "Home",
+          label: <Link href={'/'}>Home</Link>,
           key: "Home",
         },
         {
-          label: "About",
+          label: <Link href={'/about'}>About</Link>,
           key: "About",
         },
         {
-          label: "contact Us",
+          label: <Link href={'/contact'}>Contact</Link>,
           key: "contact Us",
         },
         {
-          label: "services",
+          label: <Link href={'/service'}>Service</Link>,
           key: "services",
+        },
+        {
+          label: <Link href={'/login'}> <Button type="primary">Login</Button></Link>,
+          key: "login",
         },
       ]}
     ></Menu>
